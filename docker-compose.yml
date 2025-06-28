@@ -29,14 +29,8 @@ services:
       - ./flink/jobs/job.sql:/opt/flink/jobs/job.sql
       # seatunnel config
       - ./seatunnel/config:/config
-      # seatunnel plugins
-      - ./seatunnel/plugins/mssql-jdbc-9.5.0.jre8-preview.jar:/opt/seatunnel/plugins/mssql-jdbc-9.5.0.jre8-preview.jar
-      - ./seatunnel/plugins/seatunnel-hadoop3-3.1.4-uber.jar:/opt/seatunnel/plugins/seatunnel-hadoop3-3.1.4-uber.jar
-      - ./seatunnel/plugins/seatunnel-hadoop-aws.jar:/opt/seatunnel/plugins/seatunnel-hadoop-aws.jar
       # seatunnel lib
       - ./seatunnel/lib/mssql-jdbc-9.5.0.jre8-preview.jar:/opt/seatunnel/lib/mssql-jdbc-9.5.0.jre8-preview.jar
-      - ./seatunnel/lib/seatunnel-hadoop3-3.1.4-uber.jar:/opt/seatunnel/lib/seatunnel-hadoop3-3.1.4-uber.jar
-      - ./seatunnel/lib/seatunnel-hadoop-aws.jar:/opt/seatunnel/lib/seatunnel-hadoop-aws.jar
       # seatunnel connectors
       - ./seatunnel/connectors/connector-cdc-sqlserver-2.3.10.jar:/opt/seatunnel/connectors/connector-cdc-sqlserver-2.3.10.jar
       - ./seatunnel/connectors/connector-paimon-2.3.10.jar:/opt/seatunnel/connectors/connector-paimon-2.3.10.jar
@@ -60,14 +54,8 @@ services:
       - ./flink/plugins/flink-shaded-hadoop-3-3.1.1.7.2.9.0-173-9.0.jar:/opt/flink/lib/plugins/flink-shaded-hadoop-3-3.1.1.7.2.9.0-173-9.0.jar
       # seatunnel config
       - ./seatunnel/config:/config
-      # seatunnel plugins
-      - ./seatunnel/plugins/mssql-jdbc-9.5.0.jre8-preview.jar:/opt/seatunnel/plugins/mssql-jdbc-9.5.0.jre8-preview.jar
-      - ./seatunnel/plugins/seatunnel-hadoop3-3.1.4-uber.jar:/opt/seatunnel/plugins/seatunnel-hadoop3-3.1.4-uber.jar
-      - ./seatunnel/plugins/seatunnel-hadoop-aws.jar:/opt/seatunnel/plugins/seatunnel-hadoop-aws.jar
       # seatunnel lib
       - ./seatunnel/lib/mssql-jdbc-9.5.0.jre8-preview.jar:/opt/seatunnel/lib/mssql-jdbc-9.5.0.jre8-preview.jar
-      - ./seatunnel/lib/seatunnel-hadoop3-3.1.4-uber.jar:/opt/seatunnel/lib/seatunnel-hadoop3-3.1.4-uber.jar
-      - ./seatunnel/lib/seatunnel-hadoop-aws.jar:/opt/seatunnel/lib/seatunnel-hadoop-aws.jar
       # seatunnel connectors
       - ./seatunnel/connectors/connector-cdc-sqlserver-2.3.10.jar:/opt/seatunnel/connectors/connector-cdc-sqlserver-2.3.10.jar
       - ./seatunnel/connectors/connector-paimon-2.3.10.jar:/opt/seatunnel/connectors/connector-paimon-2.3.10.jar
