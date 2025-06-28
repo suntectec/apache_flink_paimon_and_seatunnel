@@ -1,0 +1,22 @@
+FROM flink:1.16.3
+
+ARG SEATUNNEL_VERSION
+ENV SEATUNNEL_HOME="/opt/seatunnel"
+
+RUN cd /opt && \
+    wget https://archive.apache.org/dist/seatunnel/${SEATUNNEL_VERSION}/apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz && \
+    tar -zxvf apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz && \
+    mv apache-seatunnel-${SEATUNNEL_VERSION} seatunnel && \
+    rm apache-seatunnel-${SEATUNNEL_VERSION}-bin.tar.gz && \
+    sed -i 's/#rootLogger.appenderRef.consoleStdout.ref/rootLogger.appenderRef.consoleStdout.ref/' seatunnel/config/log4j2.properties && \
+    sed -i 's/#rootLogger.appenderRef.consoleStderr.ref/rootLogger.appenderRef.consoleStderr.ref/' seatunnel/config/log4j2.properties && \
+    sed -i 's/rootLogger.appenderRef.file.ref/#rootLogger.appenderRef.file.ref/' seatunnel/config/log4j2.properties && \
+    cp seatunnel/config/hazelcast-master.yaml seatunnel/config/hazelcast-worker.yaml
+
+#COPY config/plugin_config ${SEATUNNEL_HOME}/config/
+
+#RUN cd ${SEATUNNEL_HOME} && \
+#    sh bin/install-plugin.sh ${SEATUNNEL_VERSION}
+
+# 变更以后各层的工作目录的位置
+WORKDIR ${SEATUNNEL_HOME}
