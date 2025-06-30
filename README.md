@@ -2,6 +2,8 @@
 
 ![Static Badge](https://img.shields.io/badge/Just_testing-Not_production_ready-red)
 
+![Static Badge](https://img.shields.io/badge/Flink-suntectec-green?logo=apacheflink&logoColor=%23E6526F)
+
 Seeing if Seatunnel can read data stored in s3 created using Flink and Paimon
 
 ### Build a SeaTunnel image
